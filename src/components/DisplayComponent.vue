@@ -1,6 +1,22 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { calculator } from "../stores/calculatorStore";
+import { storeToRefs } from "pinia";
+
+const store = calculator();
+const { display, previous, operator } = storeToRefs(store);
+
+const checkDisplay = (input: string): string => {
+  return input === "0" ? "" : input.toString();
+}
+const symbols: any = {
+  add: "+",
+  sub: "-",
+  mult: "X",
+  div: "÷",
+}
+</script>
 <template>
-  <div class="display">35</div>
+  <div class="display"> {{ checkDisplay(display) }} {{ symbols[operator] || "" }} {{ checkDisplay(previous) }}</div>
 </template>
 <style lang="scss" scoped>
 .display {
