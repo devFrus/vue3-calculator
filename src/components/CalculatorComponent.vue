@@ -1,12 +1,24 @@
 <script setup lang="ts">
 import KeyboardComponent from './KeyboardComponent.vue'
 import DisplayComponent from './DisplayComponent.vue';
+import HistoryComponent from './HistoryComponent.vue';
+
+interface Symbol {
+  [key: string]: string
+}
+const symbols: Symbol = {
+  add: "+",
+  sub: "-",
+  mult: "x",
+  div: "÷",
+}
 </script>
 <template>
   <div class="wrapper">
     <div class="calculator">
-      <DisplayComponent />
+      <DisplayComponent :symbols="symbols" />
       <KeyboardComponent />
+      <HistoryComponent />
     </div>
   </div>
 </template>
@@ -14,6 +26,8 @@ import DisplayComponent from './DisplayComponent.vue';
 .wrapper {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 15px;
   width: 100%;
   height: 100%;
   .calculator {
