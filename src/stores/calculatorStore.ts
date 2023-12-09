@@ -26,7 +26,7 @@ export const calculator = defineStore("calculator", {
         'sub': (a, b) => a - b,
         'mult': (a, b) => a * b,
         'div': (a, b) => {
-          if (b === 0) {
+          if (a === 0) {
             this.error = 'Cannot divide by 0';
             return parseFloat(this.display);
           }
