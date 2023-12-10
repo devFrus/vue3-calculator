@@ -1,6 +1,6 @@
 # vue3-calculator
 
-This template should help get you started developing with Vue 3 in Vite.
+Live demo: https://calculator-vue3-test.netlify.app/
 
 ## Recommended IDE Setup
 
