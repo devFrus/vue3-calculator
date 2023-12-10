@@ -25,5 +25,10 @@ const { history } = storeToRefs(store)
   background-color: #181818;
   border-radius: 4px;
   padding: 10px;
+
+  max-height: 88px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 </style>

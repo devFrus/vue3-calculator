@@ -8,7 +8,7 @@ const { resolve, addInput } = store
 
 const handleInput = (button: string | number) => {
   if (typeof button === 'number') {
-    if (resolved.value) {
+    if (resolved.value && !operator.value) {
       display.value = "";
       resolved.value = false;
     }
